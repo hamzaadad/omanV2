@@ -283,3 +283,15 @@ figure > img{
 .cat-item{
   border-bottom:1px solid rgba(0,0,0,0.5)
 }
+.logo-bg-company{
+  -webkit-filter: blur(30px); /* Chrome, Safari, Opera */
+  filter: blur(30px);
+}
+
+.core-company > .row{
+  text-align: center;
+  padding-left:50px;
+  color:white;
+  font-size: large;
+  line-height: 50px;
+}

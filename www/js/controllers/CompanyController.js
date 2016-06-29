@@ -4,9 +4,6 @@ $ionicLoading.show();
 $scope.category = $stateParams.name
 $ionicLoading.hide();
 
+$scope.url = 'img/big-icons/map.png';
 
-$scope.goCompany= function(a){
-  console.log(a);
-  $state.go('company', {id:a.id});
-}
 });
