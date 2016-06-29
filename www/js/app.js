@@ -59,6 +59,12 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
              controller:'CategoryController',
              params:{name:null, id:null}
 
+           })
+           .state('company',{
+             url:'/company',
+             templateUrl:'templates/tourist/company.html',
+             controller:'CompanyController',
+             params:{id:null}
            });
        $urlRouterProvider.otherwise('/splash');
    })
