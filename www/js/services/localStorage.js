@@ -39,7 +39,6 @@ app
         return false;
       },
       setData: function(key, value){
-        window.value = value;
         if(typeof value == "object"){
           value = JSON.stringify(value);
         }

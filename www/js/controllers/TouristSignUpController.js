@@ -28,7 +28,7 @@ app
   var user = LocalFactory.getUser()
   if(user && user.hasOwnProperty("id") && user.id && user.id.length > -1){
     var goTo = (LocalFactory.getUser().type == "tourist") ? "towns" : "MainCompany";
-    //$state.go(goTo);
+    $state.go(goTo);
   }
   if(!LocalFactory.getLanguage()){
     console.log("in changeing language");
@@ -36,7 +36,7 @@ app
   }else{
     $scope.formateLange(LocalFactory.getLanguage()[0]);
   }
-  var langData = LocalFactory.getData('countries');
+  var langData = JSON.parse(LocalFactory.getData('countries'));
   if(!langData){
     ApiFactory.getCountries().then(function(resp){
       $scope.allCountries = resp.data;
@@ -48,6 +48,22 @@ app
   }else{
     $scope.allCountries = langData;
   }
+  $scope.showncountrylist = false;
+  $scope.showcountrylist = function(){
+    console.log(1);
+    $scope.showncountrylist = true;
+  }
+  $scope.selectcountry = function(id){
+  //  console.log($scope.allCountries);
+    window.cn = $scope.allCountries;
+    if(!$scope.tourist){
+      $scope.tourist = {}
+    }
+    $scope.tourist.country = $scope.allCountries.filter(function(elm){
+      return elm.code == id;
+    })[0].name;
+    $scope.showncountrylist = false;
+  }
   $scope.saveTourist = function(tourist){
     $ionicLoading.show();
     error = false
@@ -55,7 +71,6 @@ app
       if(!tourist.fullname && tourist.fullname.length <= -1){
         error = true;
       }
-      console.log(tourist.phone);
       if(!tourist.phone && tourist.phone.length <= -1){
         error = true;
       }
@@ -77,6 +92,7 @@ app
       if(!error){
           tourist["regestrationDate"] = Date.now();
           tourist["os"] = (ionic.Platform.isIOS()) ? "IOS" : (ionic.Platform.isAndroid()) ? "Android" : "webview";
+          console.log(tourist);
           ApiFactory.setTourist(tourist).then(function(resp){
             LocalFactory.setUser({
               id: resp.data.id,

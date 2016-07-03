@@ -295,3 +295,19 @@ figure > img{
   font-size: large;
   line-height: 50px;
 }
+
+.selectedTown > i{
+  line-height: 18px !important;
+}
+
+.country-list{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index:999;
+  background: rgba(0,0,0,0.7);
+  color:white;
+  padding:20px;
+  text-align: center;
+}
