@@ -1,6 +1,6 @@
 <div class="selectedTown" ng-click="showList()">{{selectedTown}}</div>
 <div class="townlist-holder" ng-show="fulllisttown">
   <div class="townlist-item" style="color:white;text-align:center;line-height: 50px;font-size:initial !important" ng-repeat="item in allTowns" ng-click="selectTown(item)">
-    {{item}}
+    {{item.name}}
   </div>
 </div>

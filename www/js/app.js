@@ -57,7 +57,7 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
              url:'/category',
              templateUrl:'templates/tourist/category.html',
              controller:'CategoryController',
-             params:{name:null, id:null}
+             params:{town:null, name:null, id:null}
 
            })
            .state('company',{
@@ -74,25 +74,24 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
      restrict: 'E',
      //template: '<select ng-model="selectedTown" ng-change="selectTown(selectedTown)" ng-options="item for item in allTowns" required><option value="">Select Town</option></select>',
      templateUrl: 'templates/directives/townlist.html',
-     controller: function($scope, $state, $rootScope, $ionicScrollDelegate) {
+     controller: function($scope, $state, $rootScope, $ionicScrollDelegate, LocalFactory) {
        //$scope.selectTown = $rootScope.currentTown;
        $scope.fulllisttown = false;
        $scope.showList = function(){
          console.log("ok");
          $scope.fulllisttown = true;
-         //scope.$apply();
        }
         $scope.selectedTown = 'Select a towns'
-        ApiFactory.getTowns().then(function(resp){
-         $scope.allTowns = resp.data[0].data;
+        var lang = LocalFactory.getLanguage()[0].name || 'eng'
+        ApiFactory.getTowns(lang).then(function(resp){
+         $scope.allTowns = resp.data;
        }, function(err){ console.log(err);});
        $scope.selectTown = function(item){
-          $rootScope.currentTown = item;
-          $scope.selectedTown = item;
+          $rootScope.currentTown = item.name;
+          $scope.selectedTown = item.name;
           $scope.fulllisttown = false;
           $ionicScrollDelegate.scrollTop();
-          console.log(item);
-          $state.go("town", {id:null, name:item})
+          $state.go("town", {id:item.id, name:item.name})
        }
      }
    }

@@ -1,5 +1,5 @@
 app
-.controller("AppController", function($rootScope, $scope, $stateParams, $state, $ionicLoading, ApiFactory, LocalFactory) {
+.controller("AppController", function($rootScope, $scope, $stateParams, $state, $ionicLoading, $http, ApiFactory, LocalFactory) {
   $ionicLoading.show();
   $scope.usersCount = 0;
   $scope.companiesCount = 0;
@@ -58,4 +58,12 @@ app
     console.log(err);
   });
 
+
+  /*var arArray  = ['البريمي', 'الجازر','الحمراء', 'الخابورة','الدقم','الرستاق','السنينة','السويق','السيب','العامرات','العوابي','القابل','الكامل والوافي','المزيونة','المصنعة','المضيبي']
+  arArray.map(function(elm){
+    $http.post('http://localhost:5000/towns', {
+      lang:'ar',
+      name:elm
+    })
+  })*/
 });

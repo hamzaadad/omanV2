@@ -5,16 +5,34 @@ app
   $scope.go = function(state){
     $state.go(state);
   }
-
-$scope.town_name = $stateParams.name;
+  $scope.town_name = $stateParams.name;
+  $scope.id = $stateParams.id
+  console.log($stateParams);
   var cats = {
-    1:11,
-    2:22,
-    3:33
+    0: "banks",
+    1: "airlines",
+    2: "hoapitals",
+    3: "resorts",
+    4: "exchange",
+    5: "travel",
+    6: "pharmacy",
+    7: "flats",
+    8: "restorant",
+    9: "clinic",
+    10: "shopping",
+    11: "jewelery",
+    12: "sweet",
+    13: "silver",
+    14: "rentcar",
+    15: "perfume",
+    16: "honey",
+    17: "antiques",
+    18: "weaving",
+    19: "frankincense"
   }
   $scope.formateLange = function(langdata){
      $scope.lang = langdata.data.town;
-   }
+  }
 
    $scope.changelanguage = function(name){
      $ionicLoading.hide();
@@ -49,11 +67,8 @@ $scope.town_name = $stateParams.name;
 
 
    $scope.cat = function(id){
-     console.log(cats[id]);
-     if(!id){
-       return;
-     }
      $state.go('category', {
+       town:$scope.id,
        name:cats[id],
        id:id
      });

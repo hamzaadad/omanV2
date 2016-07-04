@@ -11,8 +11,8 @@ app
         console.log("ok");
         return $http.get(urlBase +  globalConfig.uris.countries);
       },
-      getTowns: function(){
-        return $http.get(urlBase +  globalConfig.uris.town);
+      getTowns: function(lang){
+        return $http.get(urlBase +  globalConfig.uris.town + '/?lang='+lang);
       },
       getImages: function(id, type){
         return $http.get(urlBase + globalConfig.uris.images +"/?parentId="+id+"&parentType="+type);
