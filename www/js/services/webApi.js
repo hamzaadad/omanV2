@@ -28,6 +28,13 @@ app
       },
       setNewTown: function(data){
         return $http.post(urlBase + globalConfig.uris.town, data);
+      },
+      getCategory: function(cat){
+        var query = JSON.stringify(cat);
+        return $http.get(urlBase + globalConfig.uris.company + "/?" + query);
+      },
+      getCompany:  function(id){
+        return $http.get(urlBase + globalConfig.uris.company + "/?id="+ id );
       }
     };
 }]);

@@ -82,7 +82,8 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
          $scope.fulllisttown = true;
        }
         $scope.selectedTown = 'Select a towns'
-        var lang = LocalFactory.getLanguage()[0].name || 'eng'
+
+        var lang = (LocalFactory.getLanguage()) ? LocalFactory.getLanguage()[0].name : 'eng'
         ApiFactory.getTowns(lang).then(function(resp){
          $scope.allTowns = resp.data;
        }, function(err){ console.log(err);});

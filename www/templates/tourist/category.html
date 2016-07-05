@@ -15,21 +15,20 @@
       <span>{{category}}</span>
     </div>
      <ion-scroll zooming="false"  class="list" direction="y" style="height:600px;background: rgba(0,0,0,0.2);padding-top:10px; padding-bottom:20px">
-       <div class="row cat-item " ng-click="goCompany(a)" ng-repeat="a in [1,2,3,4,5,6,7,8,9,10,2,34,3536,456,453,33, 335,25.35,3523.53,235.35,3525.35,353.42, 235.577,8786.22, 64564.35, 45345.3453,  67,24762,4667,457,257,7,24572,456,5672,4673567,3576,47,2457,3567,427,357,356735673,73,5672,672,457,357,2672] track by $index">
+       <div class="row cat-item " ng-click="goCompany(item)" ng-repeat="item in companies">
          <div class="col">
-
-           <img class="row" src="img/big-icons/map.png" width="50px"   alt="" />
+           <img class="row" src="{{item.logo}}" width="50px"   alt="" />
          </div>
          <div class="col col-75">
            <div class="row">
-             {{a}}
+             {{item.name}}
            </div>
            <div class="row">
              <div class="col col-75">
-               adress : {{a}} {{a}} {{a}} {{a}}
+               adress : item.adress
              </div>
              <div class="col">
-               rank : 5
+               rank : {{item.rank}}
              </div>
            </div>
          </div>

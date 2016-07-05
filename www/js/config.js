@@ -8,7 +8,8 @@ var globalConfig = {
     "countries": "countries",
     "town":"towns",
     "images":"images",
-    "language":"language"
+    "language":"language",
+    "company":"company"
   },
   "statesId":"3a7e30576eff98b4"
 }

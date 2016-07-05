@@ -13,10 +13,10 @@
   <header>
     <div class="row">
       <div class="col col-20" style="z-index:998">
-        <img ng-src="{{url}}"  width="50px" alt="" />
+        <img ng-src="{{company.logo}}"  width="50px" alt="" />
       </div>
       <div class="col" style="line-height: 50px;padding: 20px;padding-top: 10px;font-size: xx-large;z-index: 998;color: white;">
-        ok ok ok ok ok
+        {{company.name}}
       </div>
     </div>
   </header>
@@ -38,13 +38,13 @@
   </div>
   <div class="core-company">
     <div class="row">
-      Email :
+      Email : {{company.email}}
     </div>
     <div class="row">
-      Tel :
+      Tel : {{company.phone}}
     </div>
     <div class="row">
-      Adress :
+      Adress : {{company.adresse}}
     </div>
     <div class="row">
       Social Medias:

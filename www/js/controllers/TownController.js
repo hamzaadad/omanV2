@@ -52,11 +52,11 @@ app
      $scope.formateLange(LocalFactory.getLanguage()[0]);
      $ionicLoading.hide();
    }
-   var langData = LocalFactory.getData('countries');
+   var langData = LocalFactory.getData('language');
    if(!langData){
      ApiFactory.getCountries().then(function(resp){
        $scope.allCountries = resp.data;
-       LocalFactory.setData('countries', resp.data);
+       LocalFactory.setData('language', resp.data);
        $ionicLoading.hide();
      }, function(err){
        console.log(err);
