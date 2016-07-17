@@ -51,13 +51,6 @@ $scope.formateLange = function(langdata){
    ApiFactory.getLanguage().then(function(resp){
      console.log(resp);
    },function(err){console.log(err)})
-   /*ApiFactory.getCountries().then(function(resp){
-     $scope.allCountries = resp.data;
-     LocalFactory.setData('language', resp.data);
-     $ionicLoading.hide();
-   }, function(err){
-     console.log(err);
-   });*/
  }else{
    $scope.allCountries = langData;
  }

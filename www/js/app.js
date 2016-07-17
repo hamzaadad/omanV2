@@ -51,7 +51,11 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
            .state('map',{
              url:'/map',
              templateUrl:'templates/tourist/map.html',
-             controller:'MapController'
+             controller:'MapController',
+             params:{
+               lat:null,
+               long:null
+             }
            })
            .state('category', {
              url:'/category',
@@ -65,6 +69,22 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate'])
              templateUrl:'templates/tourist/company.html',
              controller:'CompanyController',
              params:{id:null}
+           })
+           .state('galery', {
+             url:'/galery',
+             templateUrl:'templates/tourist/galery.html',
+             controller:'GaleryController',
+             params:{
+               elements:null
+             }
+           })
+           .state('companySingUp', {
+             url:'/companySingUp',
+             templateUrl:'templates/company/signUp.html',
+             controller:'companySingUpController',
+             params:{
+               elements:null
+             }
            });
        $urlRouterProvider.otherwise('/splash');
    })

@@ -10,6 +10,9 @@ app
 
    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
+   if($stateParams.lat && $stateParams.long){
+     latLng = new google.maps.LatLng($stateParams.lat, $stateParams.long);
+   }
    $scope.map = new google.maps.Map(document.getElementById("map"), {
      center: latLng,
      zoom: 15,

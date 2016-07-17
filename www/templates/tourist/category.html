@@ -25,10 +25,10 @@
            </div>
            <div class="row">
              <div class="col col-75">
-               adress : item.adress
+               {{lang.adresse}} : {{item.adresse}}
              </div>
              <div class="col">
-               rank : {{item.rank}}
+               {{lang.rank}} : {{item.rank}}
              </div>
            </div>
          </div>
@@ -36,4 +36,8 @@
        </div>
      </ion-scroll>
   </ion-content>
+  <ion-footer-bar class="bar-balance">
+    <a class="" style="width:100%;text-align:center;line-height:35px" ng-click="back()">< Back</a>
+  </ion-footer-bar>
+
 </ion-pane>
