@@ -9,7 +9,8 @@ var globalConfig = {
     "town":"towns",
     "images":"images",
     "language":"language",
-    "company":"company"
+    "company":"company",
+    "companytypes":"companytypes"
   },
   "statesId":"3a7e30576eff98b4"
 }

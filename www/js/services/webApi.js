@@ -35,6 +35,9 @@ app
       },
       getCompany:  function(id){
         return $http.get(urlBase + globalConfig.uris.company + "/?id="+ id );
+      },
+      getAllType: function(name){
+        return $http.get(urlBase + globalConfig.uris.companytypes+ "?lang="+name)
       }
     };
 }]);

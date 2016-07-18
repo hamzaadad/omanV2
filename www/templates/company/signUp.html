@@ -5,39 +5,38 @@
       <div class="bottom">T<span>OURISM</span></div>
     </div>
 <br>
-    <h4 class="title">{{ perosnal | capitalize}}</h4>
-    <input type="text" name="name" value="" ng-model="tourist.fullname" placeholder="{{placeholder.name | capitalize}}" required>
-    <input type="tel" name="phone" value="" ng-model="tourist.phone" placeholder="{{placeholder.phone | capitalize}}"  required>
-    <input type="email" name="email" value="" ng-model="tourist.email" placeholder="{{placeholder.email | capitalize}}" required>
-    <input type="text" name="country" value="" ng-click="showcountrylist()" ng-model="tourist.country" placeholder="{{placeholder.country | capitalize}}" required>
-    <div class="country-list" ng-if="showncountrylist">
-      <div class=""ng-click="selectcountry('ZW')" >
-        dkshl
-      </div>
-
-      <div class="" ng-repeate="item in allCountries" ng-click="selectcountry(item.code)">{{item.name}}</div>
+    <h4 class="title">{{ placeholder.info | capitalize}}</h4>
+    <input type="text" name="name" value="" ng-model="company.fullname" placeholder="{{placeholder.placeholders.name | capitalize}}" required>
+    <input type="tel" name="phone" value="" ng-model="company.phone" placeholder="{{placeholder.placeholders.phone | capitalize}}"  required>
+    <input type="email" name="email" value="" ng-model="company.email" placeholder="{{placeholder.placeholders.email | capitalize}}" required>
+    <input type="text" name="adresse" value="" ng-model="company.adresse" placeholder="{{placeholder.placeholders.address | capitalize}}" required>
+    <div class="">
+      <townlist></townlist>
     </div>
-    <input type="text" name="escort" value="" ng-model="tourist.escorts" placeholder="escort" required>
-    <h4 class="title secend">{{ trip | capitalize}}</h4>
-    <label for="">{{placeholder.from | capitalize}}</label>
-    <input type="date" name="from" value="" ng-model="tourist.from" required>
-    <label for="">{{placeholder.to | capitalize}}</label>
-    <input type="date" name="from" value="" ng-model="tourist.to" required>
+    <div class="">
+      <div class="input" ng-click="showTypes()">
+        {{company.business}}
+      </div>
+      <div class="types-list" ng-show="showntypelist" >
+        <div ng-repeat="type in allTypes" ng-click="selectType(type)">
+          {{type.data}}
+        </div>
+      </div>
+    </div>
+    <input type="text" ng-model="company.branchs" placeholder="{{placeholder.placeholders.branches}}">
+
+    <h4 class="title">{{placeholder.period}}</h4>
+    <input type="text" ng-click="openDatePicker('from')" placeholder={{placeholder.placeholders.from}}>
+    <input type="text" ng-click="openDatePicker('to')" placeholder={{placeholder.placeholders.to}}>
 
     <div class="row">
       <div class="col-10"></div>
       <div class="col-20"></div>
       <div class="col-40">
-        <button class="button sign" type="button" name="button" ng-click="saveTourist(tourist)">{{signup}}</button>
+        <button class="button sign" type="button" name="button" ng-click="saveCompany(company)">{{placeholder.placeholders.next | capitalize}}</button>
       </div>
     </div>
-    <div class="row">
-      <div class="col-10"></div>
-      <div class="col-20"></div>
-      <div class="col-40" style="text-align: center;">
-        <a class="skipbtn" href="" ng-click="go('towns')" style="text-align:center">{{skip | capitalize}}</a>
-      </div>
-    </div>
+
 
     <!--a href="tel:+1-1800-555-5555" class="button button-positive">Call me</a-->
   </ion-content>
