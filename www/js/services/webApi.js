@@ -38,6 +38,9 @@ app
       },
       getAllType: function(name){
         return $http.get(urlBase + globalConfig.uris.companytypes+ "?lang="+name)
+      },
+      getPlans:function(){
+       return $http.get(urlBase + globalConfig.uris.plans);
       }
     };
 }]);

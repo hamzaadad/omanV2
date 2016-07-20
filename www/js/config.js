@@ -10,7 +10,8 @@ var globalConfig = {
     "images":"images",
     "language":"language",
     "company":"company",
-    "companytypes":"companytypes"
+    "companytypes":"companytypes",
+    "plans":"plans"
   },
   "statesId":"3a7e30576eff98b4"
 }

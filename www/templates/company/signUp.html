@@ -6,13 +6,13 @@
     </div>
 <br>
     <h4 class="title">{{ placeholder.info | capitalize}}</h4>
-    <input type="text" name="name" value="" ng-model="company.fullname" placeholder="{{placeholder.placeholders.name | capitalize}}" required>
+    <input type="text" name="name" value="" ng-model="company.name" placeholder="{{placeholder.placeholders.name | capitalize}}" required>
     <input type="tel" name="phone" value="" ng-model="company.phone" placeholder="{{placeholder.placeholders.phone | capitalize}}"  required>
     <input type="email" name="email" value="" ng-model="company.email" placeholder="{{placeholder.placeholders.email | capitalize}}" required>
-    <input type="text" name="adresse" value="" ng-model="company.adresse" placeholder="{{placeholder.placeholders.address | capitalize}}" required>
-    <div class="">
+    <input type="text" name="adresse" value="" ng-model="company.adresse" placeholder="{{placeholder.placeholders.adresse | capitalize}}" required>
+    <!--div class="">
       <townlist></townlist>
-    </div>
+    </div-->
     <div class="">
       <div class="input" ng-click="showTypes()">
         {{company.business}}
@@ -26,9 +26,19 @@
     <input type="text" ng-model="company.branchs" placeholder="{{placeholder.placeholders.branches}}">
 
     <h4 class="title">{{placeholder.period}}</h4>
-    <input type="text" ng-click="openDatePicker('from')" placeholder={{placeholder.placeholders.from}}>
-    <input type="text" ng-click="openDatePicker('to')" placeholder={{placeholder.placeholders.to}}>
-
+    <div class="">
+      <div class="input" ng-click="showPlans()">
+        {{company.plan}}
+      </div>
+      <div class="types-list" ng-show="showplanslist">
+        <div class="plan-wrapper" ng-repeat="plan in allPlans" ng-click="selectPlan(plan)">
+          <h4 class="title">{{plan.name}} | {{plan.amount/1000}}$</h4>
+          <p class="">
+            {{plan.desc}}
+          </p>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col-10"></div>
       <div class="col-20"></div>
