@@ -47,6 +47,7 @@ app
   }
 
   ApiFactory.getStates().then(function(resp){
+    $ionicLoading.show();
     if(resp.data.hasOwnProperty("tourist") && resp.data.tourist){
       console.log(resp.data);
       $scope.usersCount = resp.data.tourist
@@ -54,6 +55,7 @@ app
     if(resp.data.hasOwnProperty("companies") && resp.data.companies){
       $scope. companiesCount = resp.data.companies
     }
+    $ionicLoading.hide();
   },function(err){
     console.log(err);
   });

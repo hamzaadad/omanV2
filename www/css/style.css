@@ -344,3 +344,15 @@ figure > img{
 .plan-wrapper:first-of-type{
   margin-top: 100px
 }
+
+.underline{
+  border-bottom: 1px solid white;
+}
+.payment-wrapper{
+  padding:20px;
+}
+.exp-sep{
+  color:white;
+  text-align: center;
+  line-height: 40px;
+}

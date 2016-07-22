@@ -1,0 +1,65 @@
+<ion-pane>
+  <ion-content scroll="false">
+    <div class="logo-big logo-mid text-shadow">
+      <div class="top">OMAN</div>
+      <div class="bottom">T<span>OURISM</span></div>
+    </div>
+    <br>
+    <div class="payment-wrapper">
+      <h4 class="title underline">{{placeholder.title | capitalize}}</h4>
+      <br>
+      <div class="row underline">
+        <div class="col-50">
+          <h4 class="title ">{{placeholder.price | capitalize}}</h4>
+        </div>
+        <div class="col-50">
+          {{price}}
+        </div>
+      </div>
+      <br>
+      <div class="row underline">
+        <div class="col-50">
+          <h4 class="title ">{{placeholder.tva | capitalize}}</h4>
+        </div>
+        <div class="col-50">
+          {{tva}}
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row underline">
+        <div class="col-50">
+          <h4 class="title ">{{placeholder.total | capitalize}}</h4>
+        </div>
+        <div class="col-50">
+          {{total}}
+        </div>
+      </div>
+      <br>
+      <form stripe-form="stripeCallback">
+
+      <span class="payment-errors">{{error | capitalize}}</span>
+
+      <div class="form-row">
+          <input type="text" size="20" ng-model="card.number" placeholder="{{placeholder.number }}">
+      </div>
+      <div class="form-row row">
+          <input type="text" class="col-33" size="2" ng-model="card.exp_month" placeholder="{{placeholder.month}}">
+          <span class="col-10 exp-sep"> / </span>
+          <input type="text" class="col-33" size="2" ng-model="card.exp_year" placeholder="{{placeholder.year}}">
+
+        </div>
+        <div class="form-row">
+            <input type="text" size="4" ng-model="card.cvc" placeholder="{{placeholder.cvc}}"></label>
+
+        </div>
+        <div class="row">
+          <div class="col-10"></div>
+          <div class="col-20"></div>
+          <div class="col-40">
+            <button class="button sign" type="submit" name="button" >{{placeholder.done | capitalize}}</button>
+          </div>
+        </div>
+      </from>
+      </ion-content>
+    </ion-pane>

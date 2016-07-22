@@ -2,7 +2,7 @@ app
     .factory('ApiFactory', ['$http', function($http) {
 
     var urlBase = globalConfig.api;
-
+    var urlPayment = globalConfig.paymentGetaway;
     return {
       getStates: function(){
         return $http.get(urlBase + globalConfig.uris.states + "/" + globalConfig.statesId);
@@ -41,6 +41,15 @@ app
       },
       getPlans:function(){
        return $http.get(urlBase + globalConfig.uris.plans);
-      }
+     },
+     saveCompany: function(company){
+       return $http.post(urlBase + globalConfig.uris.company, company);
+     },
+     makePayment: function(card, company_id){
+       return $http.post(urlPayment+ "pay", {
+         card: card,
+         company_id: company_id
+       });
+     }
     };
 }]);

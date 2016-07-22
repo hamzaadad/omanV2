@@ -12,7 +12,13 @@
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
+
+    <!--script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+      Stripe.setPublishableKey('pk_test_HUrbROxRltxf5DtFNrUCe0nh');
+    </script-->
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -21,7 +27,10 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+    <script type="text/javascript"
+            src="lib/angular-payments/lib/angular-payments.js">
+    </script>
+
     <script src="js/config.js"></script>
     <script src="js/app.js"></script>
     <script src="js/services/webApi.js"></script>
@@ -35,6 +44,7 @@
     <script src="js/controllers/CompanyController.js"></script>
     <script src="js/controllers/GaleryController.js"></script>
     <script src="js/controllers/companySingUpController.js"></script>
+    <script src="js/controllers/paymentController.js"></script>
 
 
 

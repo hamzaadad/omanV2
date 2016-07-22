@@ -11,7 +11,6 @@ app
     $scope.company.business = langdata.data.companySingup.placeholders.business;
     $scope.company.plan = langdata.data.companySingup.placeholders.plan
     if(!LocalFactory.getData('types')){
-      console.log(langdata);
       ApiFactory.getAllType(langdata.name).then(function(resp){
         LocalFactory.setData('types', resp.data)
         $scope.allTypes = resp.data
@@ -67,11 +66,27 @@ app
     $scope.showplanslist = false;
   }
   $scope.saveCompany = function(company){
+    delete company.business
+    delete company.plan
     console.log(company);
-    //console.log((company.to - company.from)/1000/60/60/24/30);
-  //  if(angular.equals(['name', 'phone', 'email', 'type', 'branches', 'from'], Object.keys(company))){
+    var ok = true
+    Object.keys(company).map(function(elm){
+      if(company[elm] == ""){
+        ok = false;
+      }
+    })
+    if(ok){
+      ApiFactory.saveCompany(company).then(function(resp){
+        LocalFactory.setData('company_id', resp.data.id);
+        $state.go('payment', {company_id:resp.data.id});
+      }, function(err){console.log(err)})
+    }else{
+      $ionicPopup.show({
+        template: 'Please make sur all the infromations are set!',
+        title: 'An error has been accured!'
+      })
+    }
 
-    //}
-    //console.log(company);
+
   }
 });

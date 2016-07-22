@@ -1,6 +1,8 @@
 var globalConfig = {
   //"api":"https://pure-shelf-72731.herokuapp.com/",
   "api":"http://localhost:5000/",
+  //"paymentGetaway":"https://omantours.herokuapp.com",
+  "paymentGetaway":"http://localhost:3000/",
   "uris":{
     "states": "states",
     "users":"users",

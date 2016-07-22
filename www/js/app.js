@@ -1,4 +1,4 @@
-var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate', 'ionic-datepicker'])
+var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate', 'ionic-datepicker', 'angularPayments'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -17,24 +17,10 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate', 'ionic-
 .constant('ApiEndpoint', {
   url: 'http://localhost:8100'
 })
-.config(function($stateProvider, $urlRouterProvider, ionicDatePickerProvider) {
+.config(function($stateProvider, $urlRouterProvider, ionicDatePickerProvider/*, $window*/ ) {
+  //stripeProvider.setPublishableKey('');
+//  $window.Stripe.setPublishableKey('pk_test_HUrbROxRltxf5DtFNrUCe0nh');
 
-  ionicDatePickerProvider.configDatePicker({
-    inputDate: new Date(),
-    setLabel: 'Set',
-    todayLabel: 'Today',
-    closeLabel: 'Close',
-    mondayFirst: false,
-    weeksList: ["S", "M", "T", "W", "T", "F", "S"],
-    monthsList: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
-    templateType: 'popup',
-    from: new Date(2012, 8, 1),
-    to: new Date(2018, 8, 1),
-    showTodayButton: true,
-    dateFormat: 'dd MMMM yyyy',
-    closeOnSelect: false,
-    disableWeekdays: [6]
-  });
        $stateProvider
            .state('splash', {
                url: '/splash',
@@ -101,6 +87,14 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate', 'ionic-
              controller:'companySingUpController',
              params:{
                elements:null
+             }
+           })
+           .state('payment', {
+             url:'/payment',
+             templateUrl:'templates/company/payment.html',
+             controller:'paymentController',
+             params:{
+               comapany_id:null
              }
            });
        $urlRouterProvider.otherwise('/splash');
