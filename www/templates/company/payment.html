@@ -41,16 +41,14 @@
       <span class="payment-errors">{{error | capitalize}}</span>
 
       <div class="form-row">
-          <input type="text" size="20" ng-model="card.number" placeholder="{{placeholder.number }}">
+          <input type="text" max-size="20" ng-model="number" placeholder="{{placeholder.number }}">
       </div>
       <div class="form-row row">
-          <input type="text" class="col-33" size="2" ng-model="card.exp_month" placeholder="{{placeholder.month}}">
-          <span class="col-10 exp-sep"> / </span>
-          <input type="text" class="col-33" size="2" ng-model="card.exp_year" placeholder="{{placeholder.year}}">
+          <input type="text" class="col-33" max-size="5" ng-model="expiry" placeholder="{{placeholder.month}} / {{placeholder.year}}">
 
         </div>
         <div class="form-row">
-            <input type="text" size="4" ng-model="card.cvc" placeholder="{{placeholder.cvc}}"></label>
+            <input type="text" max-size="4" ng-model="cvc"   placeholder="{{placeholder.cvc}}"></label>
 
         </div>
         <div class="row">

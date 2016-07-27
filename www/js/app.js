@@ -1,4 +1,4 @@
-var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate', 'ionic-datepicker', 'angularPayments'])
+var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate', 'angularPayments'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -17,9 +17,10 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate', 'ionic-
 .constant('ApiEndpoint', {
   url: 'http://localhost:8100'
 })
-.config(function($stateProvider, $urlRouterProvider, ionicDatePickerProvider/*, $window*/ ) {
+.config(function($stateProvider, $urlRouterProvider, $windowProvider/*, $window*/ ) {
+  var $window = $windowProvider.$get();
   //stripeProvider.setPublishableKey('');
-//  $window.Stripe.setPublishableKey('pk_test_HUrbROxRltxf5DtFNrUCe0nh');
+  $window.Stripe.setPublishableKey('pk_test_HUrbROxRltxf5DtFNrUCe0nh');
 
        $stateProvider
            .state('splash', {

@@ -1,5 +1,5 @@
 app
-.controller("companySingUpController", function($scope, $stateParams, $state, $http, $ionicLoading, $ionicPopup, ApiFactory, LocalFactory, ionicDatePicker) {
+.controller("companySingUpController", function($scope, $stateParams, $state, $http, $ionicLoading, $ionicPopup, ApiFactory, LocalFactory) {
   $scope.company = {};
   $scope.showntypelist = false;
   $ionicLoading.show();

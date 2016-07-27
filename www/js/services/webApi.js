@@ -45,11 +45,8 @@ app
      saveCompany: function(company){
        return $http.post(urlBase + globalConfig.uris.company, company);
      },
-     makePayment: function(card, company_id){
-       return $http.post(urlPayment+ "pay", {
-         card: card,
-         company_id: company_id
-       });
+     makePayment: function(data){
+       return $http.post(urlPayment+ "pay", data);
      }
     };
 }]);

@@ -1,7 +1,7 @@
 app
 .controller("paymentController", function($scope, $stateParams, $state, $stateParams, $ionicLoading, $ionicHistory, ApiFactory, LocalFactory) {
 $ionicLoading.show();
-$scope.company_id = LocalFactory.getData('company_id') || $state.params.company_id || "284f7654b368b843"
+$scope.company_id = /*LocalFactory.getData('company_id') || $state.params.company_id || */"284f7654b368b843"
 $scope.go = function(state){
   $state.go(state);
 }
@@ -24,12 +24,32 @@ if(!LocalFactory.getLanguage()){
 }else{
   $scope.formateLange(LocalFactory.getLanguage()[0]);
 }
+$scope.number ="4242424242424242"
 
 $scope.stripeCallback = function (code, result) {
+  console.log({
+    number:$scope.number,
+    exp:$scope.expiry,
+    cvc:$scope.cvc,
+    planid:'53a3a64d25fff811',
+    //tocken:result.id,
+    company_id:$scope.company_id
+  })
     if (result.error) {
-        window.alert('it failed! error: ' + result.error.message);
+      $scope.error = result.error
     } else {
-        window.alert('success! token: ' + result.id);
+
+      ApiFactory.makePayment({
+        number:$scope.number,
+        exp:$scope.expiry,
+        cvc:$scope.cvc,
+        planid:'53a3a64d25fff811',
+        tocken:result.id,
+        company_id:$scope.company_id
+      }, $scope.company_id)
+      .then(function(resp){
+        console.log(resp)
+      }, function(err){console.log(err)});
     }
 };
 
