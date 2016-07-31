@@ -97,6 +97,14 @@ var app = angular.module('omantour', ['ionic', 'ngCordova', 'ngAnimate', 'angula
              params:{
                comapany_id:null
              }
+           })
+           .state('comapanyEdit', {
+             url:'/comapanyEdit',
+             templateUrl:'templates/company/companyEdit.html',
+             controller:'comapanyEditController',
+             params:{
+               id:null
+             }
            });
        $urlRouterProvider.otherwise('/splash');
    })

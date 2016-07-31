@@ -48,7 +48,20 @@ $scope.stripeCallback = function (code, result) {
         company_id:$scope.company_id
       }, $scope.company_id)
       .then(function(resp){
-        console.log(resp)
+        if(resp.data.callback){
+          $scope.callback = resp.data.callback
+          if(resp.data.callback.error == false){
+            setTimeout(function(){
+              $scope.callback =null;
+            }, 3000);
+          }else if(resp.data.callback.true == false){
+            setTimeout(function(){
+              $state.go('companyEdit', {
+                id:$scope.comapany_id
+              });
+            })
+          }
+        }
       }, function(err){console.log(err)});
     }
 };
