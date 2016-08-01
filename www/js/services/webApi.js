@@ -47,6 +47,9 @@ app
      },
      makePayment: function(data){
        return $http.post(urlPayment+ "pay", data);
+     },
+     updateCompany: function(id, data){
+       return $http.put(urlBase + globalConfig.uris.company + "/" +id, data )
      }
     };
 }]);
