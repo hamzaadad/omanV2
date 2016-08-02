@@ -66,9 +66,9 @@ app
     $scope.showplanslist = false;
   }
   $scope.saveCompany = function(company){
-    delete company.business
-    delete company.plan
-    console.log(company);
+    delete company.business;
+    delete company.plan;
+    $ionicLoading.show();
     var ok = true
     Object.keys(company).map(function(elm){
       if(company[elm] == ""){
@@ -77,9 +77,19 @@ app
     })
     if(ok){
       ApiFactory.saveCompany(company).then(function(resp){
+
+        $ionicLoading.hide();
+        if(resp.data.status == 401){
+          alert("Email already exist!");
+          return;
+        }
         LocalFactory.setData('company_id', resp.data.id);
         $state.go('payment', {company_id:resp.data.id});
-      }, function(err){console.log(err)})
+      }, function(err){
+        $ionicLoading.hide();
+        alert("Email already exist!")
+        console.log(err)
+      })
     }else{
       $ionicPopup.show({
         template: 'Please make sur all the infromations are set!',

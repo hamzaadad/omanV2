@@ -1,5 +1,21 @@
 <ion-pan>
 <ion-content>
+  <div class="social-input" ng-show="showaddphoto" style="text-align:center">
+    <div class="" style="padding-top:20px; background:white; margin-top:50px; padding-bottom:50px">
+      <div class="row" ng-repeat="image in company.images track by $index" style="line-height:50px">
+        <div class="col-50">
+          {{image}}
+        </div>
+        <div class="col-50" ng-click="remove(image)" style="color:red">
+          X
+        </div>
+      </div>
+      <div class="row">
+        <button type="button" class="button" ng-click="loadimage()">Add more</button>
+      </div>
+
+    </div>
+  </div>
   <div class="social-input" ng-show="showsocial">
     <div class="social-box">
       <div class="row">
@@ -44,7 +60,7 @@
       <div class="col">
 
       </div>
-      <div class="col" ng-click="goGalery(company.images)">
+      <div class="col" ng-click="showimage()">
         <img src="img/icon.png" width="55" style="margin-left:10px" alt="" />
       </div>
       <div class="col" ng-click="showSoon()">
