@@ -50,6 +50,9 @@ app
      },
      updateCompany: function(id, data){
        return $http.put(urlBase + globalConfig.uris.company + "/" +id, data )
+     },
+     getFees: function(id){
+       return $http.get(urlBase + globalConfig.uris.plans+"/"+id);
      }
     };
 }]);

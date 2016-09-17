@@ -2,7 +2,7 @@
   <ion-content scroll="false">
     <div class="callback-payment" ng-show="callback">
       <div class="success" ng-if="callback.success">
-         &#10003;
+        <img src="img/checked.png" alt="" style="width:180px;padding-left: 32px;"/>
       </div>
       <div class="error" ng-if="callback.error">
         &#10005;
@@ -20,7 +20,7 @@
         <div class="col-50">
           <h4 class="title ">{{placeholder.price | capitalize}}</h4>
         </div>
-        <div class="col-50">
+        <div class="col-50 payment-tag">
           {{price}}
         </div>
       </div>
@@ -29,7 +29,7 @@
         <div class="col-50">
           <h4 class="title ">{{placeholder.tva | capitalize}}</h4>
         </div>
-        <div class="col-50">
+        <div class="col-50 payment-tag">
           {{tva}}
         </div>
       </div>
@@ -39,7 +39,7 @@
         <div class="col-50">
           <h4 class="title ">{{placeholder.total | capitalize}}</h4>
         </div>
-        <div class="col-50">
+        <div class="col-50 payment-tag">
           {{total}}
         </div>
       </div>

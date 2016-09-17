@@ -1,0 +1,72 @@
+<ion-pane>
+  <ion-content scroll="false">
+    <div class="callback-payment" ng-show="callback">
+      <div class="success" ng-if="callback.success">
+         &#10003;
+      </div>
+      <div class="error" ng-if="callback.error">
+        &#10005;
+      </div>
+    </div>
+    <div class="logo-big logo-mid text-shadow">
+      <div class="top">OMAN</div>
+      <div class="bottom">T<span>OURISM</span></div>
+    </div>
+    <br>
+    <div class="payment-wrapper">
+      <h4 class="title underline">{{placeholder.title | capitalize}}</h4>
+      <br>
+      <div class="row underline">
+        <div class="col-50">
+          <h4 class="title ">{{placeholder.price | capitalize}}</h4>
+        </div>
+        <div class="col-50">
+          {{price}}
+        </div>
+      </div>
+      <br>
+      <div class="row underline">
+        <div class="col-50">
+          <h4 class="title ">{{placeholder.tva | capitalize}}</h4>
+        </div>
+        <div class="col-50">
+          {{tva}}
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row underline">
+        <div class="col-50">
+          <h4 class="title ">{{placeholder.total | capitalize}}</h4>
+        </div>
+        <div class="col-50">
+          {{total}}
+        </div>
+      </div>
+      <br>
+      <form stripe-form="stripeCallback">
+
+      <span class="payment-errors">{{error | capitalize}}</span>
+
+      <div class="form-row">
+          <input type="text" max-size="20" ng-model="number" placeholder="{{placeholder.number }}">
+      </div>
+      <div class="form-row row">
+          <input type="text" class="col-33" max-size="5" ng-model="expiry" placeholder="{{placeholder.month}} / {{placeholder.year}}">
+
+        </div>
+        <div class="form-row">
+            <input type="text" max-size="4" ng-model="cvc"   placeholder="{{placeholder.cvc}}"></label>
+
+        </div>
+        <div class="row">
+          <div class="col-10"></div>
+          <div class="col-20"></div>
+          <div class="col-40">
+            <button class="button sign" type="submit" name="button" >{{placeholder.done | capitalize}}</button>
+          </div>
+        </div>
+      </from>
+
+      </ion-content>
+    </ion-pane>

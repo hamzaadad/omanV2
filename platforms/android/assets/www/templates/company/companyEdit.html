@@ -1,0 +1,117 @@
+<ion-pan>
+<ion-content>
+  <div class="social-input" ng-show="showaddphoto" style="text-align:center">
+    <div class="" style="padding-top:20px; background:white; margin-top:50px; padding-bottom:50px">
+      <div class="row" ng-repeat="image in company.images track by $index" style="line-height:50px">
+        <div class="col-50">
+          {{image}}
+        </div>
+        <div class="col-50" ng-click="remove(image)" style="color:red">
+          X
+        </div>
+      </div>
+      <div class="row">
+        <button type="button" class="button">Add more</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="social-input" ng-show="showsocial">
+    <div class="social-box">
+      <div class="row">
+        {{social.name}}
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-20">
+
+            <img ng-src="{{social.icon}}" style="width:50px" alt="" />
+        </div>
+        <div class="col-80">
+          <input type="text" ng-model="social.url" style="border-bottom-color:black !important;color:black !important;">
+        </div>
+      </div>
+      <button type="button" name=""  style="width:100%; text-align:center" ng-click="saveSocial(social)">Save</button>
+    </div>
+  </div>
+
+  <div class="row" >
+    <div class="col">
+      <img src="img/small-logo.png" alt="" />
+    </div>
+    <div class="col">
+    </div>
+    <div class="col-30">
+
+    </div>
+  </div>
+  <header>
+    <div class="row" style="padding:0px;">
+      <div class="col col-20" style="z-index:998">
+        <img src="{{company.logo}}"  width="50px" style="padding-left:15px" alt="" />
+      </div>
+      <div class="col" style="line-height: 30px;padding: 10px;padding-top: 5px;font-size: xx-large;z-index: 998;color: white;">
+        {{company.name}}
+      </div>
+    </div>
+  </header>
+  <div class="top-icons">
+    <div class="row">
+      <div class="col">
+
+      </div>
+      <div class="col" ng-click="showimage()">
+        <img src="img/icon.png" width="55" style="margin-left:10px" alt="" />
+      </div>
+      <div class="col" ng-click="showSoon()">
+        <img src="img/video.png" width="55"  alt="" />
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+  </div>
+  <div class="core-company" style="width: 100%;margin: 0 auto;">
+    <div class="row">
+      <span class="col-20">Email</span>  <input type="text" class="" name="email" ng-model="company.email" value="">
+    </div>
+    <div class="row">
+      <span class="col-20">Tel</span>  <input type="text" name="phone" ng-model="company.phone" value="">
+    </div>
+    <div class="row">
+      <span class="col-20">Whatsapp</span>   <input type="text" name="phone" ng-model="company.whatsapp" value="">
+    </div>
+    <div class="row">
+      Social Medias:
+    </div>
+  </div>
+  <div class="socials">
+    <div class="row" style="width:60%;margin:0 auto">
+      <div class="col col-35">
+        <img src="img/fb.png" width="50" ng-click="addsocials('facebook', 'img/fb.png', company.fb)" alt="" />
+      </div>
+      <div class="col col-35">
+        <img src="img/insta.png" width="50" ng-click="addsocials('instagram', 'img/insta.png', company.instagram)" alt="" />
+      </div>
+      <div class="col col-35">
+        <img src="img/twiter.png" ng-click="addsocials('twitter', 'img/twiter.png', company.twiter)" width="50" alt="" />
+      </div>
+    </div>
+    <div class="row" style="width:60%;margin:0 auto">
+      <div class="col col-35">
+        <img src="img/in.png" ng-click="addsocials('linkedin', 'img/in.png', company.in)" width="50" alt="" />
+      </div>
+      <div class="col col-35">
+        <img src="img/snap.png" ng-click="addsocials('snapchat', 'img/snap.png', company.snapchat)" width="50" alt="" />
+      </div>
+      <div class="col col-35">
+        <img src="img/google.png"  ng-click="addsocials('google', 'img/google.png', company.google)" width="50" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" class="button" ng-click="saveEdit()">Save</button>
+  </div>
+
+</ion-content>
+</ion-pan>

@@ -1,0 +1,83 @@
+<ion-pan>
+<ion-content>
+  <div class="row" >
+    <div class="col">
+      <img src="img/small-logo.png" alt="" />
+    </div>
+    <div class="col">
+    </div>
+    <div class="col-30">
+      <townlist sc='townname' style="line-height: 21px;"></townlist>
+    </div>
+  </div>
+  <header>
+    <div class="row">
+      <div class="col col-20" style="z-index:998">
+        <img ng-src="{{company.logo}}"  width="50px" alt="" />
+      </div>
+      <div class="col" style="line-height: 50px;padding: 20px;padding-top: 10px;font-size: xx-large;z-index: 998;color: white;">
+        {{company.name}}
+      </div>
+    </div>
+  </header>
+  <div class="top-icons">
+    <div class="row">
+      <div class="col" ng-click="goGalery(company.images)">
+        <img src="img/icon.png" width="75" alt="" />
+      </div>
+      <div class="col" ng-click="goGalery(company.events)">
+        <img src="img/events.png" width="75"  alt="" />
+      </div>
+      <div class="col" ng-click="goMal(company.adresse)">
+        <img src="img/big-icons/map.png" width="75"  alt="" />
+      </div>
+      <div class="col" ng-click="goGalery(company.vids)">
+        <img src="img/video.png" width="75"  alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="core-company" style="width: 60%;margin: 0 auto;">
+    <div class="row">
+      Email : {{company.email}}
+    </div>
+    <div class="row">
+      Tel : {{company.phone}}
+    </div>
+    <div class="row">
+      Adress : {{company.adresse}}
+    </div>
+    <div class="row">
+      Social Medias:
+    </div>
+  </div>
+  <div class="socials">
+    <div class="row" style="width:60%;margin:0 auto">
+      <div class="col col-35">
+        <a href="{{company.fb}}"><img src="img/fb.png" width="50" alt="" /></a>
+      </div>
+      <div class="col col-35">
+        <a href="{{company.insta}}"><img src="img/insta.png" width="50" alt="" /></a>
+      </div>
+      <div class="col col-35">
+        <a href="{{company.twiter}}"><img src="img/twiter.png" width="50" alt="" /></a>
+      </div>
+    </div>
+    <div class="row" style="width:60%;margin:0 auto">
+      <div class="col col-35">
+        <a href="{{company.in}}"><img src="img/in.png" width="50" alt="" /></a>
+      </div>
+      <div class="col col-35">
+        <a href="{{company.snap}}"><img src="img/snap.png" width="50" alt="" /></a>
+      </div>
+      <div class="col col-35">
+        <a href="{{google.google}}"><img src="img/google.png" width="50" alt="" /></a>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+<ion-footer-bar class="bar-balance">
+  <a class="" style="width:100%;text-align:center;line-height:35px" ng-click="back()">< Back</a>
+</ion-footer-bar>
+
+</ion-pan>

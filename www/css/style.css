@@ -408,11 +408,18 @@ figure > img{
   color:black
 }
 .social-box > input{
-  
+
 }
 .social-box button{
   margin-top: 10px;
 }
 .social-box .row{
   padding-top:20px;
+}
+
+.payment-tag{
+  line-height: 25px;
+    text-align: right;
+    color: white;
+    font-size: xx-large;
 }

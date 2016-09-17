@@ -1,0 +1,43 @@
+
+<ion-pane>
+  <ion-content class="town">
+    <div class="row">
+      <div class="col">
+        <img src="img/small-logo.png" alt="" />
+      </div>
+      <div class="col">
+      </div>
+      <div class="col-30">
+        <townlist sc='townname' style="line-height: 21px;"></townlist>
+      </div>
+    </div>
+    <div class="row category-name">
+      <span>{{category}}</span>
+    </div>
+     <ion-scroll zooming="false"  class="list" direction="y" style="height:600px;background: rgba(0,0,0,0.2);padding-top:10px; padding-bottom:20px">
+       <div class="row cat-item " ng-click="goCompany(item)" ng-repeat="item in companies">
+         <div class="col">
+           <img class="row" src="{{item.logo}}" width="50px"   alt="" />
+         </div>
+         <div class="col col-75">
+           <div class="row">
+             {{item.name}}
+           </div>
+           <div class="row">
+             <div class="col col-75">
+               {{lang.adresse}} : {{item.adresse}}
+             </div>
+             <div class="col">
+               {{lang.rank}} : {{item.rank}}
+             </div>
+           </div>
+         </div>
+
+       </div>
+     </ion-scroll>
+  </ion-content>
+  <ion-footer-bar class="bar-balance">
+    <a class="" style="width:100%;text-align:center;line-height:35px" ng-click="back()">< Back</a>
+  </ion-footer-bar>
+
+</ion-pane>

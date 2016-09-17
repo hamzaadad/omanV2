@@ -1,0 +1,418 @@
+/* Empty. Add your own CSS if you like */
+*{
+  font-family: 'bariol_regularregular';
+}
+.view-content {
+  background-image: url('../img/bg.png');
+  background-size: cover;
+}
+
+.pane {
+  background-image: url('../img/bg.png') !important;
+  background-size: cover !important;
+}
+
+.logo{
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+  margin-top:30%;
+}
+.logo-big{
+  color: white;
+  font-size: 100px;
+  text-align: center;
+  line-height: 38px;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+.logo-mid{
+  margin-top: 8%!important;
+  margin-bottom: 5%!important;
+}
+.logo-big > .top{
+  font-size: 50px;
+  margin-left: -37px
+}
+.logo-big > .bottom > span{
+  font-size: 70px;
+}
+.splash-map{
+  width: 100px;
+  height: 100px;
+  margin-left: 37.5%;
+  margin-top: 8%;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  background: url('../img/big-icons/map.png') no-repeat;
+  background-size: 100% 100%;
+  line-height: 95px;
+  font-size: 20px;
+  text-shadow: 0px 3px 2px rgba(32, 72, 83, 0.35);
+  /*-webkit-box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+  -moz-box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+  box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);*/
+}
+
+.states{
+  margin-top: 8%;
+  width: 100%;
+  text-align: center;
+  color:white;
+  font-size: 20px;
+}
+.text-shadow{
+  text-shadow: 0px 3px 2px rgba(32, 72, 83, 0.8);
+}
+.btn-container{
+
+  margin-top: 20%;
+
+}
+.center{
+  margin-left: 25% !important;
+}
+.button{
+  text-shadow: 0px 3px 2px rgba(32, 72, 83, 0.35);
+  background: rgba(55,203,198,.7);
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  line-height: 36px;
+  color: white;
+  -webkit-box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+  -moz-box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+  box-shadow: 0px 5px 1px 0px rgba(0,0,0,.5);
+}
+
+.lang{
+  color: white;
+  font-size: 16px;
+  margin-top: 8%;
+  width: 100%;
+  text-align: center;
+}
+.full-lang{
+  background: rgba(0,0,0,0.8);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 20%;
+}
+
+.title{
+  color:white;
+  padding: 10px;
+  padding-top:0px;
+  margin-bottom: 0px;
+}
+h4:first-of-type{
+  margin-top: 0px;
+}
+}
+.secend{
+  margin-top: 20px !important;
+}
+input, select{
+  background: transparent;
+  border:none;
+  color:rgba(255,255,255,.8) !important;
+  border-bottom: 1px solid rgba(255,255,255,.8) !important;
+  width: 90%;
+  margin-left: 5%;
+  height: 40px !important;
+}
+.input{
+  background: transparent;
+  border:none;
+  color:rgba(255,255,255,.8) !important;
+  border-bottom: 1px solid rgba(255,255,255,.8) !important;
+  width: 90%;
+  margin-left: 5%;
+  height: 40px !important;
+  line-height:40px;
+}
+label{
+  color:rgba(255,255,255,.8) !important;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5px;
+  height: 40px !important;
+}
+.sign{
+  margin-top: 20px;
+}
+/* animation */
+
+.fade.ng-hide {
+  opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+  display: block !important;
+}
+
+.fade.ng-hide-remove {
+  transition: all linear 200ms;
+}
+
+.fade.ng-hide-add {
+  transition: all linear 100ms;
+}
+
+
+.scroll {
+  height: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.skipbtn{
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  line-height: 60px;
+  color:white
+}
+
+.alert{
+  text-align: center;
+}
+.towns > .row > .title2{
+  text-align: center;
+  width: 100%;
+  font-size: xx-large;
+  line-height: 40px;
+  color:white;
+}
+.towns > .row > .title{
+  text-align: center;
+  width: 100%;
+  font-size: -webkit-xxx-large;
+  line-height: 40px;
+  margin-top: 50px;
+}
+.towns > .row > .title.listTowns{
+  line-height: 100px
+  border-bottom:2px solid white;
+}
+.towns > .row > .title > townlist > select{
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-size: -webkit-xxx-large;
+  line-height: 80px;
+  padding-bottom: -4px;
+  height: 69px !important;
+}
+
+.selectedTown{
+  /*border-bottom: 1px solid white;*/
+  color:white;
+}
+
+.townlist-holder{
+  background: rgba(0, 0, 0, 0.8);
+  height: 650%;
+  position: absolute;
+  top: 0px;
+  z-index: 999;
+  width: 100%;
+  left: 0;
+}
+
+.townlist-item{
+  border-bottom: 1px solid rgba(211, 211, 211, 0.19);
+  color:white;
+}
+
+
+.bar.bar-light {
+  background-color: rgba(255,255,255,.1) !important; /* or transparent, or background:none */
+}
+.scroll-content {
+  overflow: visible !important;
+}
+
+.small-logo{
+  margin: 10px;
+}
+.town{
+  background: url(../img/town-header.png);
+  background-position-x: 100%;
+  background-size: cover;
+  color:white;
+}
+.town-name{
+  font-size: xx-large;
+}
+.town .row{
+  /*line-height: 50px;*/
+}
+.icon-big-row{
+  text-align: center;
+}
+.big-icon{
+  width: calc(100% / 3);
+
+}
+.big-icon > img{
+  height: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.near-by > img{
+  width: 20px;
+  height: 20px;
+}
+
+figure > img{
+  height: 60px;
+}
+.scroll-bar-indicator
+{
+  display: block;
+}
+
+.category-name{
+  color:white;
+  line-height: 30px;
+  font-size: xx-large;
+}
+
+.cat-item{
+  border-bottom:1px solid rgba(0,0,0,0.5)
+}
+.logo-bg-company{
+  -webkit-filter: blur(30px); /* Chrome, Safari, Opera */
+  filter: blur(30px);
+}
+
+.core-company > .row{
+  text-align: center;
+  padding-left:10px;
+  color:white;
+  font-size: large;
+  line-height: 50px;
+}
+
+.selectedTown > i{
+  line-height: 18px !important;
+}
+
+.country-list{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index:999;
+  background: rgba(0,0,0,0.7);
+  color:white;
+  padding:20px;
+  text-align: center;
+}
+
+.types-list{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index:999;
+  background: rgba(0,0,0,0.8);
+  color:white;
+  padding:20px;
+  text-align: center;
+}
+
+.plan-wrapper{
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding:20px;
+  margin-top: 50px;
+}
+
+.plan-wrapper:first-of-type{
+  margin-top: 100px
+}
+
+.underline{
+  border-bottom: 1px solid white;
+}
+.payment-wrapper{
+  padding:20px;
+}
+.exp-sep{
+  color:white;
+  text-align: center;
+  line-height: 40px;
+}
+.callback-payment{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.8);
+  position: absolute;
+  z-index: 999;
+  color:white;
+}
+.callback-payment > .success{
+  margin-top: 50%;
+  margin-left:25%;
+  border: 2px solid green;
+  width: 200px;
+  height: 200px;
+  color:green;
+  line-height: 195px;
+  text-align: center;
+  font-size: xx-large;
+  border-radius: 50%;
+
+}
+.callback-payment > .error{
+  margin-top: 50%;
+  margin-left:25%;
+  border: 2px solid red;
+  width: 200px;
+  height: 200px;
+  color:red;
+  line-height: 195px;
+  text-align: center;
+  font-size: xx-large;
+  border-radius: 50%;
+}
+
+
+.social-input{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+  background: rgba(0,0,0,0.8)
+}
+.social-box{
+  margin-top: 50%;
+  margin-left: 10%;
+  background: white;
+  box-shadow: 0px 0px 20px black;
+  width: 80%;
+  height: 180px;
+  color:black
+}
+.social-box > input{
+  
+}
+.social-box button{
+  margin-top: 10px;
+}
+.social-box .row{
+  padding-top:20px;
+}

@@ -1,0 +1,55 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"ImagePicker\"><param name=\"ios-package\" value=\"SOSPicker\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com-badrit-base64": {
+            "PACKAGE_NAME": "com.ionicframework.omantourism248775"
+        },
+        "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "com.ionicframework.omantourism248775"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.omantourism248775"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/com-badrit-base64/www/Base64.js",
+            "id": "com-badrit-base64.Base64",
+            "pluginId": "com-badrit-base64",
+            "clobbers": [
+                "navigator.Base64"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-image-picker/www/imagepicker.js",
+            "id": "cordova-plugin-image-picker.ImagePicker",
+            "pluginId": "cordova-plugin-image-picker",
+            "clobbers": [
+                "plugins.imagePicker"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "com-badrit-base64": "0.2.0",
+        "cordova-plugin-image-picker": "1.1.1",
+        "cordova-plugin-whitelist": "1.2.2"
+    }
+}
